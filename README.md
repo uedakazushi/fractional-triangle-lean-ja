@@ -2,7 +2,7 @@
 
 **著者：Kenji Hashimoto (橋本健治), Hwayoung Lee, Kazushi Ueda (植田一石)**
 
-このリポジトリは、英語正本 `canonical-roots-lean` の固定コミットに対応する
+このリポジトリは、英語正本 `fractional-triangle-lean` の固定コミットに対応する
 日本語解説です。Lean ソースを複製せず、正本の定理・定義へ接続する
 [Lean Blueprint](blueprint/README.md) を収録します。
 
@@ -23,15 +23,15 @@ Lean ビルド・公理監査の通過と、人間の数学的査読は別です
 ## Blueprint のビルド
 
 Python 3.13、Graphviz、LuaLaTeX、latexmk、日本語 TeX が必要です。
-英語正本を隣の `../canonical-roots-lean` に置き、`upstream.lock.json` の
+英語正本を隣の `../fractional-triangle-lean` に置き、`upstream.lock.json` の
 コミットへチェックアウトして、先にその `formal/` で `lake build` を実行します。
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r blueprint/requirements.txt
-python scripts/check_blueprint.py --source ../canonical-roots-lean --lean
-python scripts/build_blueprint.py --source ../canonical-roots-lean --pdf
+python scripts/check_blueprint.py --source ../fractional-triangle-lean --lean
+python scripts/build_blueprint.py --source ../fractional-triangle-lean --pdf
 python scripts/check_site.py
 python -m http.server 8000 --directory _site
 ```

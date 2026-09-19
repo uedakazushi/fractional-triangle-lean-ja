@@ -25,7 +25,7 @@ jobs:
           import json, os, re
           lock = json.loads(Path('upstream.lock.json').read_text())
           url = lock.get('repository') or ''
-          match = re.fullmatch(r'https://github.com/([A-Za-z0-9-]+/canonical-roots-lean)', url)
+          match = re.fullmatch(r'https://github.com/([A-Za-z0-9-]+/fractional-triangle-lean)', url)
           if not match or not re.fullmatch(r'[0-9a-f]{40}', lock['commit']):
               raise SystemExit('Configure upstream.lock.json with the published canonical URL and exact commit.')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
