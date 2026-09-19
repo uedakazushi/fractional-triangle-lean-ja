@@ -7,7 +7,7 @@
 [Lean Blueprint](blueprint/README.md) を収録します。
 
 原稿の定理1.4も `CanonicalRoots.theorem_1_4` として英語正本に収録しています。
-Blueprint の「可逆性と剛性の定理」節から、全次元の可逆表示、三変数の逆方向と
+Blueprint の「可逆性定理」節から、全次元の可逆表示、三変数の逆方向と
 一意性、高次元の判定と剛性の証明を確認できます。
 
 対象は `n ≥ 3`、`a ≥ 1` の孤立超曲面 canonical-root 環であり、同値関係は

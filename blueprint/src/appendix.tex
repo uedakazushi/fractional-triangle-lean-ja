@@ -1,0 +1,89 @@
+\clearpage
+\appendix
+\section{小さなパラメータでの分類表}
+\label{app:tables}
+
+$n$ は変数数、$\dim R=n-1$、$a=h-\sum_iw_i$ とする。$3\leq n\leq5$、$1\leq a\leq6$ の全18入力を Lean 列挙器で実行した。表の数値は次数付き複素代数同型類の数である。
+
+\subsection{個数と渡辺氏のリストとの比較}
+\begin{table}[htbp]
+\centering
+\input{tables/counts}
+\caption{小さな $n,a$ に対する同型類の全個数。}
+\label{tab:counts}
+\end{table}
+
+表\ref{tab:comparison}の $N_{\mathrm W}$ は渡辺氏の arXiv 第1版\cite{Watanabe}の種数零・三点型の項目数、$N_{\mathrm{Lean}}$ は $n=3$ の出力数である。比較項目は (1-C-1)--(1-C-14)、(2-C-4)--(2-C-9)、(3-C-14)--(3-C-20)、(4-C-6)--(4-C-12)、(5-C-26)--(5-C-31)、(5-C-34)--(5-C-44)。$a=6$ の該当項目はない。(3-C-19) の $(4,10.17;34)$ は $(4,10,17;34)$ と読み、欠落に数えない。
+
+\begin{table}[htbp]
+\centering
+\input{tables/comparison}
+\caption{\texttt{arXiv:1401.0789v1} の指定した三点型項目との比較。}
+\label{tab:comparison}
+\end{table}
+
+転記した51項目は全て列挙器の57同型類に含まれる。表\ref{tab:missing}が追加の六例である。$(x,y,z)$ の重みは表示順、signature は独立に整列する。各式は三項で、重みは原始的、$|\det E|=h$ である。
+
+\begin{table}[htbp]
+\centering\small
+\input{tables/missing}
+\caption{比較対象のリストに載っていない六つの重み系。}
+\label{tab:missing}
+\end{table}
+
+\clearpage
+\subsection{小さなパラメータでの三変数の完全なリスト}
+表\ref{tab:ternary1}--\ref{tab:ternary5}に $a=1,\ldots,5$ の全同型類を示す。$a=6$ は空である。星印は表\ref{tab:missing}の補完例を表し、それ以外のキーは比較対象のリストに含まれる。$a=1$ の表は十四個の例外型単峰超曲面三角特異点を再現する。
+
+\begin{table}[htbp]
+\centering\small
+\input{tables/ternary_a1}
+\caption{$n=3$, $a=1$：14同型類。}
+\label{tab:ternary1}
+\end{table}
+\begin{table}[htbp]
+\centering\small
+\input{tables/ternary_a2}
+\caption{$n=3$, $a=2$：6同型類。}
+\label{tab:ternary2}
+\end{table}
+\begin{table}[htbp]
+\centering\small
+\input{tables/ternary_a3}
+\caption{$n=3$, $a=3$：8同型類。}
+\label{tab:ternary3}
+\end{table}
+\begin{table}[htbp]
+\centering\small
+\input{tables/ternary_a4}
+\caption{$n=3$, $a=4$：8同型類。}
+\label{tab:ternary4}
+\end{table}
+\begin{table}[htbp]
+\centering\small
+\input{tables/ternary_a5}
+\caption{$n=3$, $a=5$：21同型類。}
+\label{tab:ternary5}
+\end{table}
+
+\clearpage
+\subsection{小さなパラメータでの高次元の完全なリスト}
+$n\geq4$ では各行の Fermat 表示は $f=\sum_i z_i^{h/w_i}$ である。signature と重みはそれぞれ独立に昇順で表示するので、変数の指数は重みの順序に従う。この範囲で $n=4,5$ の非空な結果があるのは $a=1,5$ だけである。
+
+\begin{table}[htbp]
+\centering\small
+\input{tables/higher_n4}
+\caption{$n=4$（次元3）、$1\leq a\leq6$ の全同型類。}
+\label{tab:higher4}
+\end{table}
+\begin{table}[htbp]
+\centering\small
+\input{tables/higher_n5}
+\caption{$n=5$（次元4）、$1\leq a\leq6$ の全同型類。}
+\label{tab:higher5}
+\end{table}
+
+\subsection{表の再現方法}
+英語正本の \texttt{formal/} で \texttt{lake build canonical\_roots} を実行した後、そのリポジトリ直下で \texttt{python3 scripts/blueprint\_tables.py --check} を実行する。18入力を再実行し、保存した JSON と TeX の表と比較する。日本語版の表は同じコマンドに \texttt{--output-root} と日本語版リポジトリへのパスを追加して確認できる。意図的に再生成するときは \texttt{--check} を外す。
+
+数値データは \texttt{blueprint/data/small\_classifications.json} にある。原資料の項目番号とページを付けた転記は、英語正本の \texttt{research/current/watanabe\_v1\_three\_point\_keys.csv} に保存している。分類の普遍的な正しさの定理に加え、\texttt{OutputCertificates.lean} は $n=3$, $1\leq a\leq6$ と $(n,a)=(4,1),(4,5),(5,1)$ などの全リスト等式を Lean のカーネルで検証している。表は実行出力から生成して照合する。歴史的な文献の読解・転記の確認は、この形式証明の外側にある。

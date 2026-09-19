@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/uedakazushi/fractional-triangle-lean",
-  "commit": "d16f357ef6c0dd7c3d020295c5b1e851efdde36e",
-  "source_manifest_sha256": "7071d271c0fb8d16fdee3ab43b626038c221d027b1e2e35c90f1a432d1910cd7",
+  "commit": "41127d7e1ceda205a911e00ec31831f0110ea08b",
+  "source_manifest_sha256": "4caa371004cc94391d8caa173ea623013fa8710a0d907722c01ae7866f97df55",
   "local_sibling": "../fractional-triangle-lean",
   "policy": "Update only after reviewing the Japanese exposition against this exact canonical commit."
 }

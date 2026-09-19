@@ -1,0 +1,20 @@
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Triangle singularity（三角特異点）は、双曲三角形の幾何、保型形式、重み付き斉次曲面特異点を結ぶ対象である。角度が $\pi/p,\pi/q,\pi/r$ の双曲三角形から、上半平面 $\mathbb H$ に作用する余コンパクトな von Dyck 群 $\Gamma$ が得られる。商オービフォールド $\mathcal X=[\mathbb H/\Gamma]$ は三つのオービフォールド点を持つ射影直線であり、その標準環のスペクトルが三角特異点を与える。Dolgachev による保型形式と準斉次特異点の研究、および Milnor、Wagreich の仕事により、この関係が明らかになった。超曲面となる場合は Arnold の十四個の例外型単峰特異点に一致する\cite{Dolgachev,Milnor,Wagreich,HLU}。
+
+Fractional triangle singularity では、標準束の整数べきの代わりに、その根のべきを考える。Milnor は分数次数の保型微分形式を扱い、分数べきを定義するために必要な持ち上げのデータを導入した\cite[Sections 5--6]{Milnor}。オービフォールド上で実際の直線束 $\mathcal L$ が $\mathcal L^{\otimes a}\cong\omega_{\mathcal X}$ を満たすとき、
+\[
+ R=\bigoplus_{m\geq0}H^0(\mathcal X,\mathcal L^{\otimes m})
+\]
+を考える。次数 $m$ の元は、$\mathcal L$ が与える整合的な保型因子のもとで、微分形式としての重みが $m/a$ の保型形式に対応する。代数的には、捩れを含む整数次数群での根の等式 $a\tau=\omega$ がこの構成を表す。次数群を $\mathbb Q$ で有理化して単に $a$ で割るだけでは、根の存在条件を失う。高次元では対応する次数付き根環を用いる。$a=1$ の場合は Hashimoto--Lee--Ueda の一般化三角特異点を拡張する\cite{HLU}。
+
+\emph{このプロジェクトの目標は、AI の支援のもとで、次元と Gorenstein parameter を固定した孤立超曲面 fractional triangle singularity を列挙する形式検証済みコードを書くこと、および The Invertibility Theorem（可逆性定理）を証明することである。} 以下では $n$ を代数の最小生成元数とし、超曲面の次元は $n-1$ とする。正の Gorenstein parameter の記号は一貫して
+\[
+ a=h-\sum_{i=1}^{n}w_i\geq1
+\]
+を用いる。列挙器は $(n,a)$ を入力とし、この根環の族に属する次数付き複素代数同型類を列挙する。可逆性定理（定理\ref{thm:one-four}）は、全ての対象が原始重みと $|\det E|=h$ を満たす主可逆表示を持つこと、三変数での逆方向、一意性および高次元の結論を与える。コードと証明は mathlib を用いて Lean で構成する。AI はその構成を支援し、生成された証明項を Lean が検査する。
+
+付録\ref{app:tables}の小さなパラメータに対する表は、列挙の具体的な結果を示す。また、渡辺敬一氏の二次元次数付き正規超曲面のリストの三点型部分には、六例の漏れがあることが分かる。比較対象は2014年1月4日付の \texttt{arXiv:1401.0789v1} の Section~3 に固定する\cite{Watanabe}。表\ref{tab:comparison}と表\ref{tab:missing}に個数の比較と六つの補完例の重み、方程式、signature を示す。$a=3$ に一例、$a=4$ に一例、$a=5$ に四例である。この比較は同版の種数零・三点型の個別列挙に関するものであり、一般有限性定理や、同論文が扱うより広い対象全体についての主張ではない。後の版の訂正状況や、これらの特異点自体の新規性も主張しない。文献の転記の確認は、分類の Lean 証明と区別して記録する。
+
+以下では、対象の定義、次元による二つの場合、検証済み列挙器、可逆性定理の順に説明する。各 Lean リンクは対応する宣言へ到達する。依存グラフは説明上の依存関係を示すものであり、緑のノードだけで仮定と結論の数学的な読解が不要になるわけではない。

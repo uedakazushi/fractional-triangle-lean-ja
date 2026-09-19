@@ -1,0 +1,2952 @@
+{
+  "generator": "scripts/blueprint_tables.py",
+  "source_manifest_sha256": "4caa371004cc94391d8caa173ea623013fa8710a0d907722c01ae7866f97df55",
+  "comparison_source": "https://arxiv.org/abs/1401.0789v1",
+  "comparison_scope": "Section 3, genus-zero three-point subclass, 1 <= a <= 6",
+  "transcription_sha256": "4257e0ba35e717e2a3464ec6ccdfa2ef136479b437726c931c1d2a28b229e8ef",
+  "cases": [
+    {
+      "n": 3,
+      "dimension": 2,
+      "a": 1,
+      "count": 14,
+      "rows": [
+        {
+          "weights": [
+            3,
+            4,
+            4
+          ],
+          "h": 12,
+          "signature": [
+            4,
+            4,
+            4
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-1"
+        },
+        {
+          "weights": [
+            3,
+            4,
+            5
+          ],
+          "h": 13,
+          "signature": [
+            3,
+            4,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                1,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-2"
+        },
+        {
+          "weights": [
+            3,
+            4,
+            8
+          ],
+          "h": 16,
+          "signature": [
+            3,
+            4,
+            4
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "1-C-3"
+        },
+        {
+          "weights": [
+            3,
+            5,
+            6
+          ],
+          "h": 15,
+          "signature": [
+            3,
+            3,
+            6
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-4"
+        },
+        {
+          "weights": [
+            3,
+            5,
+            9
+          ],
+          "h": 18,
+          "signature": [
+            3,
+            3,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "1-C-5"
+        },
+        {
+          "weights": [
+            3,
+            8,
+            12
+          ],
+          "h": 24,
+          "signature": [
+            3,
+            3,
+            4
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-6"
+        },
+        {
+          "weights": [
+            4,
+            5,
+            6
+          ],
+          "h": 16,
+          "signature": [
+            2,
+            5,
+            6
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-10"
+        },
+        {
+          "weights": [
+            4,
+            5,
+            10
+          ],
+          "h": 20,
+          "signature": [
+            2,
+            5,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-11"
+        },
+        {
+          "weights": [
+            4,
+            6,
+            7
+          ],
+          "h": 18,
+          "signature": [
+            2,
+            4,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-14"
+        },
+        {
+          "weights": [
+            4,
+            6,
+            11
+          ],
+          "h": 22,
+          "signature": [
+            2,
+            4,
+            6
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "1-C-13"
+        },
+        {
+          "weights": [
+            4,
+            10,
+            15
+          ],
+          "h": 30,
+          "signature": [
+            2,
+            4,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "1-C-12"
+        },
+        {
+          "weights": [
+            6,
+            8,
+            9
+          ],
+          "h": 24,
+          "signature": [
+            2,
+            3,
+            9
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-9"
+        },
+        {
+          "weights": [
+            6,
+            8,
+            15
+          ],
+          "h": 30,
+          "signature": [
+            2,
+            3,
+            8
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "1-C-8"
+        },
+        {
+          "weights": [
+            6,
+            14,
+            21
+          ],
+          "h": 42,
+          "signature": [
+            2,
+            3,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "1-C-7"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "dimension": 2,
+      "a": 2,
+      "count": 6,
+      "rows": [
+        {
+          "weights": [
+            3,
+            5,
+            5
+          ],
+          "h": 15,
+          "signature": [
+            5,
+            5,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "2-C-4"
+        },
+        {
+          "weights": [
+            3,
+            5,
+            7
+          ],
+          "h": 17,
+          "signature": [
+            3,
+            5,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                1,
+                0
+              ]
+            }
+          ],
+          "source_case": "2-C-5"
+        },
+        {
+          "weights": [
+            3,
+            5,
+            10
+          ],
+          "h": 20,
+          "signature": [
+            3,
+            5,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "2-C-6"
+        },
+        {
+          "weights": [
+            3,
+            7,
+            9
+          ],
+          "h": 21,
+          "signature": [
+            3,
+            3,
+            9
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "2-C-7"
+        },
+        {
+          "weights": [
+            3,
+            7,
+            12
+          ],
+          "h": 24,
+          "signature": [
+            3,
+            3,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "2-C-8"
+        },
+        {
+          "weights": [
+            3,
+            10,
+            15
+          ],
+          "h": 30,
+          "signature": [
+            3,
+            3,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "2-C-9"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "dimension": 2,
+      "a": 3,
+      "count": 8,
+      "rows": [
+        {
+          "weights": [
+            4,
+            5,
+            7
+          ],
+          "h": 19,
+          "signature": [
+            4,
+            5,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            }
+          ],
+          "source_case": "3-C-14"
+        },
+        {
+          "weights": [
+            4,
+            5,
+            8
+          ],
+          "h": 20,
+          "signature": [
+            4,
+            4,
+            8
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                4,
+                0
+              ]
+            }
+          ],
+          "source_case": "3-C-15"
+        },
+        {
+          "weights": [
+            4,
+            5,
+            12
+          ],
+          "h": 24,
+          "signature": [
+            4,
+            4,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                4,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "3-C-16"
+        },
+        {
+          "weights": [
+            4,
+            7,
+            10
+          ],
+          "h": 24,
+          "signature": [
+            2,
+            7,
+            10
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                6,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "3-C-17"
+        },
+        {
+          "weights": [
+            4,
+            7,
+            14
+          ],
+          "h": 28,
+          "signature": [
+            2,
+            7,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "3-C-18"
+        },
+        {
+          "weights": [
+            4,
+            10,
+            13
+          ],
+          "h": 30,
+          "signature": [
+            2,
+            4,
+            13
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": null
+        },
+        {
+          "weights": [
+            4,
+            10,
+            17
+          ],
+          "h": 34,
+          "signature": [
+            2,
+            4,
+            10
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                6,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "3-C-19"
+        },
+        {
+          "weights": [
+            4,
+            14,
+            21
+          ],
+          "h": 42,
+          "signature": [
+            2,
+            4,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "3-C-20"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "dimension": 2,
+      "a": 4,
+      "count": 8,
+      "rows": [
+        {
+          "weights": [
+            3,
+            7,
+            7
+          ],
+          "h": 21,
+          "signature": [
+            7,
+            7,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "4-C-6"
+        },
+        {
+          "weights": [
+            3,
+            7,
+            11
+          ],
+          "h": 25,
+          "signature": [
+            3,
+            7,
+            11
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                6,
+                1,
+                0
+              ]
+            }
+          ],
+          "source_case": "4-C-8"
+        },
+        {
+          "weights": [
+            3,
+            7,
+            14
+          ],
+          "h": 28,
+          "signature": [
+            3,
+            7,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "4-C-7"
+        },
+        {
+          "weights": [
+            3,
+            11,
+            15
+          ],
+          "h": 33,
+          "signature": [
+            3,
+            3,
+            15
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                6,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "4-C-9"
+        },
+        {
+          "weights": [
+            3,
+            11,
+            18
+          ],
+          "h": 36,
+          "signature": [
+            3,
+            3,
+            11
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                6,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "4-C-10"
+        },
+        {
+          "weights": [
+            3,
+            14,
+            21
+          ],
+          "h": 42,
+          "signature": [
+            3,
+            3,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "4-C-11"
+        },
+        {
+          "weights": [
+            5,
+            6,
+            9
+          ],
+          "h": 24,
+          "signature": [
+            3,
+            5,
+            9
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                4,
+                0
+              ]
+            }
+          ],
+          "source_case": null
+        },
+        {
+          "weights": [
+            5,
+            6,
+            15
+          ],
+          "h": 30,
+          "signature": [
+            3,
+            5,
+            5
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                5,
+                0
+              ]
+            }
+          ],
+          "source_case": "4-C-12"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "dimension": 2,
+      "a": 5,
+      "count": 21,
+      "rows": [
+        {
+          "weights": [
+            3,
+            8,
+            8
+          ],
+          "h": 24,
+          "signature": [
+            8,
+            8,
+            8
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                8,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-26"
+        },
+        {
+          "weights": [
+            3,
+            8,
+            13
+          ],
+          "h": 29,
+          "signature": [
+            3,
+            8,
+            13
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                1,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-27"
+        },
+        {
+          "weights": [
+            3,
+            8,
+            16
+          ],
+          "h": 32,
+          "signature": [
+            3,
+            8,
+            8
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                8,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "5-C-28"
+        },
+        {
+          "weights": [
+            3,
+            13,
+            18
+          ],
+          "h": 39,
+          "signature": [
+            3,
+            3,
+            18
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-29"
+        },
+        {
+          "weights": [
+            3,
+            13,
+            21
+          ],
+          "h": 42,
+          "signature": [
+            3,
+            3,
+            13
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "5-C-30"
+        },
+        {
+          "weights": [
+            3,
+            16,
+            24
+          ],
+          "h": 48,
+          "signature": [
+            3,
+            3,
+            8
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                8,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-31"
+        },
+        {
+          "weights": [
+            4,
+            7,
+            9
+          ],
+          "h": 25,
+          "signature": [
+            4,
+            7,
+            9
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                1
+              ]
+            }
+          ],
+          "source_case": null
+        },
+        {
+          "weights": [
+            4,
+            7,
+            12
+          ],
+          "h": 28,
+          "signature": [
+            4,
+            4,
+            12
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                4,
+                0
+              ]
+            }
+          ],
+          "source_case": null
+        },
+        {
+          "weights": [
+            4,
+            7,
+            16
+          ],
+          "h": 32,
+          "signature": [
+            4,
+            4,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                4,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": null
+        },
+        {
+          "weights": [
+            4,
+            9,
+            14
+          ],
+          "h": 32,
+          "signature": [
+            2,
+            9,
+            14
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                8,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-34"
+        },
+        {
+          "weights": [
+            4,
+            9,
+            18
+          ],
+          "h": 36,
+          "signature": [
+            2,
+            9,
+            9
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                2,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                9,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-35"
+        },
+        {
+          "weights": [
+            4,
+            14,
+            19
+          ],
+          "h": 42,
+          "signature": [
+            2,
+            4,
+            19
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                7,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-38"
+        },
+        {
+          "weights": [
+            4,
+            14,
+            23
+          ],
+          "h": 46,
+          "signature": [
+            2,
+            4,
+            14
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                8,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "5-C-37"
+        },
+        {
+          "weights": [
+            4,
+            18,
+            27
+          ],
+          "h": 54,
+          "signature": [
+            2,
+            4,
+            9
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                9,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "5-C-36"
+        },
+        {
+          "weights": [
+            6,
+            7,
+            9
+          ],
+          "h": 27,
+          "signature": [
+            3,
+            6,
+            7
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                3,
+                0,
+                1
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                3
+              ]
+            }
+          ],
+          "source_case": "5-C-39"
+        },
+        {
+          "weights": [
+            6,
+            8,
+            11
+          ],
+          "h": 30,
+          "signature": [
+            2,
+            8,
+            11
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-40"
+        },
+        {
+          "weights": [
+            6,
+            8,
+            13
+          ],
+          "h": 32,
+          "signature": [
+            2,
+            6,
+            13
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                4,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                4,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-41"
+        },
+        {
+          "weights": [
+            6,
+            8,
+            19
+          ],
+          "h": 38,
+          "signature": [
+            2,
+            6,
+            8
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                4,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                5,
+                1,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": null
+        },
+        {
+          "weights": [
+            6,
+            16,
+            21
+          ],
+          "h": 48,
+          "signature": [
+            2,
+            3,
+            21
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                8,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-44"
+        },
+        {
+          "weights": [
+            6,
+            16,
+            27
+          ],
+          "h": 54,
+          "signature": [
+            2,
+            3,
+            16
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                1,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                9,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            }
+          ],
+          "source_case": "5-C-43"
+        },
+        {
+          "weights": [
+            6,
+            22,
+            33
+          ],
+          "h": 66,
+          "signature": [
+            2,
+            3,
+            11
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                11,
+                0,
+                0
+              ]
+            }
+          ],
+          "source_case": "5-C-42"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "dimension": 2,
+      "a": 6,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 4,
+      "dimension": 3,
+      "a": 1,
+      "count": 1,
+      "rows": [
+        {
+          "weights": [
+            42,
+            258,
+            602,
+            903
+          ],
+          "h": 1806,
+          "signature": [
+            2,
+            3,
+            7,
+            43
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                7,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                43,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "dimension": 3,
+      "a": 2,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 4,
+      "dimension": 3,
+      "a": 3,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 4,
+      "dimension": 3,
+      "a": 4,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 4,
+      "dimension": 3,
+      "a": 5,
+      "count": 1,
+      "rows": [
+        {
+          "weights": [
+            42,
+            282,
+            658,
+            987
+          ],
+          "h": 1974,
+          "signature": [
+            2,
+            3,
+            7,
+            47
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                7,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                47,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "dimension": 3,
+      "a": 6,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 5,
+      "dimension": 4,
+      "a": 1,
+      "count": 3,
+      "rows": [
+        {
+          "weights": [
+            1518,
+            2046,
+            4278,
+            15686,
+            23529
+          ],
+          "h": 47058,
+          "signature": [
+            2,
+            3,
+            11,
+            23,
+            31
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                11,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                23,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                31,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "weights": [
+            1806,
+            75894,
+            466206,
+            1087814,
+            1631721
+          ],
+          "h": 3263442,
+          "signature": [
+            2,
+            3,
+            7,
+            43,
+            1807
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                7,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                43,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1807,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "weights": [
+            1974,
+            16590,
+            111390,
+            259910,
+            389865
+          ],
+          "h": 779730,
+          "signature": [
+            2,
+            3,
+            7,
+            47,
+            395
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                7,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                47,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                395,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "dimension": 4,
+      "a": 2,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 5,
+      "dimension": 4,
+      "a": 3,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 5,
+      "dimension": 4,
+      "a": 4,
+      "count": 0,
+      "rows": []
+    },
+    {
+      "n": 5,
+      "dimension": 4,
+      "a": 5,
+      "count": 2,
+      "rows": [
+        {
+          "weights": [
+            1806,
+            76062,
+            467238,
+            1090222,
+            1635333
+          ],
+          "h": 3270666,
+          "signature": [
+            2,
+            3,
+            7,
+            43,
+            1811
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                7,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                43,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                1811,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "weights": [
+            2982,
+            4326,
+            43878,
+            102382,
+            153573
+          ],
+          "h": 307146,
+          "signature": [
+            2,
+            3,
+            7,
+            71,
+            103
+          ],
+          "terms": [
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                0,
+                2
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                0,
+                3,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                0,
+                7,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                0,
+                71,
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "coefficient": 1,
+              "exponents": [
+                103,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "dimension": 4,
+      "a": 6,
+      "count": 0,
+      "rows": []
+    }
+  ],
+  "comparison": [
+    {
+      "a": 1,
+      "source_count": 14,
+      "classifier_count": 14,
+      "missing_keys": []
+    },
+    {
+      "a": 2,
+      "source_count": 6,
+      "classifier_count": 6,
+      "missing_keys": []
+    },
+    {
+      "a": 3,
+      "source_count": 7,
+      "classifier_count": 8,
+      "missing_keys": [
+        [
+          4,
+          10,
+          13,
+          30
+        ]
+      ]
+    },
+    {
+      "a": 4,
+      "source_count": 7,
+      "classifier_count": 8,
+      "missing_keys": [
+        [
+          5,
+          6,
+          9,
+          24
+        ]
+      ]
+    },
+    {
+      "a": 5,
+      "source_count": 17,
+      "classifier_count": 21,
+      "missing_keys": [
+        [
+          4,
+          7,
+          9,
+          25
+        ],
+        [
+          4,
+          7,
+          12,
+          28
+        ],
+        [
+          4,
+          7,
+          16,
+          32
+        ],
+        [
+          6,
+          8,
+          19,
+          38
+        ]
+      ]
+    },
+    {
+      "a": 6,
+      "source_count": 0,
+      "classifier_count": 0,
+      "missing_keys": []
+    }
+  ]
+}

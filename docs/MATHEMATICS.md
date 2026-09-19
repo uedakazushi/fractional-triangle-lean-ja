@@ -23,11 +23,11 @@
 OS 出力、コンパイラー、JSON 文字列の parser/printer、外部ハッシュは
 純粋定理の外側です。実機での実用的な時間・メモリの保証も全域性とは別です。
 
-## 可逆性と剛性の定理（原稿の定理1.4）
+## 可逆性定理（原稿の定理1.4）
 
 `canonical_root_isolated_ja_v01.pdf` の4ページの定理1.4は、
 英語正本の `formal/CanonicalRoots/TheoremOneFour.lean` にある
-`CanonicalRoots.theorem_1_4` と対応します。原稿の `δ` は Lean の `a` です。
+`CanonicalRoots.theorem_1_4` と対応します。Gorenstein parameter の記号は `a` に統一します。
 六つの連言が次を述べます。
 
 1. 全ての孤立超曲面根環は、原始重みと

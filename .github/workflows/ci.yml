@@ -55,6 +55,8 @@ jobs:
           python3 -m pip install -r blueprint/requirements.txt
       - name: Build and check HTML and PDF
         run: |
+          cd _upstream/formal && lake build canonical_roots && cd ../..
+          python3 _upstream/scripts/blueprint_tables.py --check --output-root .
           python3 scripts/build_blueprint.py --source _upstream --pdf
           python3 scripts/check_site.py
       - name: Upload reviewable site
