@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the exact canonical-source commit used in your work."
+type: software
+title: "Canonical-root hypersurfaces: Japanese explanatory companion"
+authors:
+  - family-names: Hashimoto
+    given-names: Kenji
+  - family-names: Lee
+    given-names: Hwayoung
+  - family-names: Ueda
+    given-names: Kazushi
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - Lean
+  - formal verification
+  - canonical-root hypersurfaces

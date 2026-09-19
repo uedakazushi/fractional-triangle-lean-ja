@@ -1,0 +1,7 @@
+{
+  "repository": null,
+  "commit": "606a947bbf0f24a903aa374dfc041d0d83c6bcde",
+  "source_manifest_sha256": "f69d895873a23bcd49379a915b50e2e3b2173ac76775c50820959c71a367497a",
+  "local_sibling": "../canonical-roots-lean",
+  "policy": "Update only after reviewing the Japanese exposition against this exact canonical commit."
+}

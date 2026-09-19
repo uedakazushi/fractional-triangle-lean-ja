@@ -1,0 +1,321 @@
+\section*{範囲と読み方}
+この Blueprint は既存の Lean 宣言への数学的な案内図であり、全ての補助補題を逐語的に記述するものではない。グラフの辺は解説上の依存を表し、証明項から自動抽出した完全な依存グラフではない。英語版リポジトリが形式化の正本で、日本語版はその固定コミットを解説し、証明ライブラリを重複して持たない。
+
+まず独立した対象定義を読み、次に次元ごとの二枝、最後に四つの最終定理を読む。各 Lean ボタンは実際のソース宣言に到達する。これはソース閲覧ページで、doc-gen の API 文書ではない。緑色のノードは検査したビルドに宣言が存在し、本文との対応を編集上付けたことを表す。自然言語の説明自体の正しさを自動認証するものではない。独立した人間による数学的査読の完了は記録されていない。
+
+対象は複素数体上の孤立超曲面 canonical-root 環に限る。全ての孤立超曲面を分類するものではない。変数の数は最小代数生成元数で、環の次元はそれより1小さい。コンパイル実行、JSON の文字列 parser/printer、OS 出力、外部ハッシュは純粋 Lean payload 定理の外側である。
+
+\section{対象と共通代数}
+
+\begin{definition}[実際の次数付き根環]
+\label{def:root}
+\lean{CanonicalRoots.DegreeGroup,CanonicalRoots.IsCanonicalRoot,CanonicalRoots.AmbientRing,CanonicalRoots.RootRing,CanonicalRoots.rootPiece,CanonicalRoots.GradedAlgEquiv}
+\leanok
+$p_i\geq2$、$\sum_i1/p_i<1$ に対して
+\[L=(\mathbb Z^n\oplus\mathbb Zc)/\langle p_ix_i-c\rangle,\quad
+T=\mathbb C[X_1,\ldots,X_n]/(\sum_iX_i^{p_i}),\quad\omega=c-\sum_i x_i\]
+とする。根は $a\tau=\omega$ を満たす実際の $\tau\in L$ であり、
+$R=\bigoplus_{m\geq0}T_{m\tau}$ を $T$ の部分代数として構成する。
+$L$ の捩れを保持する。同値とは各次数成分を保つ複素代数同型である。
+\end{definition}
+
+\begin{definition}[列挙器と独立した分類対象]
+\label{def:target}
+\lean{CanonicalRoots.RootHypersurfacePresentation,CanonicalRoots.Target}
+\leanok
+\uses{def:root}
+$n\geq3$, $a\geq1$ の対象は、許容 signature、実際の根、および次数付き表示 $\mathbb C[z_1,\ldots,z_n]/(f)\simeq R$ からなる。重みは正、$f$ は正次数の非零斉次式で、定数項・一次項がなく、全複素点で勾配の共通零点が原点だけである。列挙への所属や正規形の存在は定義の仮定に含まれない。
+\end{definition}
+
+\begin{theorem}[整数次数群内での根の存在]
+\label{thm:root-arithmetic}
+\lean{CanonicalRoots.canonicalRoot_exists_iff}
+\leanok
+$p_i>0$ とし、$N=\operatorname{lcm}(p_i)$、$k=N-\sum_iN/p_i$ と置く。実際の canonical root が存在するための必要十分条件は $a\mid k$ かつ $\gcd(a,N)=1$ である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:root}
+次数群の正規形で根の等式を評価する。剰余の等式から互いに素性、分子次数から整除性を得る。逆に Bézout 係数から元の商群内の根を構成する。
+\end{proof}
+
+\begin{definition}[有限自由基底]
+\label{def:basis}
+\lean{CanonicalRoots.rootFiniteFreeBasis}
+\leanok
+\uses{thm:root-arithmetic}
+許容根と $N\tau=uc$ を満たす正整数 $N,u$ に対して、指定した座標冪が生成する部分代数上に根環の明示的な有限基底を構成する。箱の添字集合と係数作用の正確な定義はリンク先の宣言にある。
+\end{definition}
+
+\begin{theorem}[実際の斉次成分からの Hilbert 級数]
+\label{thm:hilbert}
+\lean{CanonicalRoots.canonicalRootHilbertSeries_eq_rational}
+\leanok
+許容 canonical root の Hilbert 級数は、有限な単項式の箱と多項式冪の分母から得られる有理式に等しい。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:basis}
+斉次基底を箱の剰余と非負冪に分け、次数ごとの個数を数えて冪級数の係数を一致させ、有理式に接続する。
+\end{proof}
+
+\begin{theorem}[内在的な数値恒等式]
+\label{thm:numerics}
+\lean{CanonicalRoots.Target.relationDegree_eq_add_sum_weights,CanonicalRoots.Target.weights_gcd_eq_one}
+\leanok
+任意の対象の重みは原始的で、関係次数は $h=a+\sum_iw_i$ を満たす。これらは実際の根環表示から導く性質である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:target,thm:hilbert}
+根環と超曲面の Hilbert 式を比較する。相反恒等式から次数差を得て、十分大きい次数の成分が消滅しないことから重みの最大公約数が1であると示す。
+\end{proof}
+
+\begin{theorem}[最小生成元数の一致]
+\label{thm:minimum}
+\lean{CanonicalRoots.RootHypersurfacePresentation.root_minimum_generators,CanonicalRoots.RootHypersurfacePresentation.exists_minimal_surjection}
+\leanok
+$n$ 変数の根環表示は $n$ 変数多項式環からの全射を与える。同じ根環への任意の $m$ 変数多項式環からの全射について $n\leq m$ が成り立つ。別の写像には次数保存を要求しない。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:target}
+定数項・一次項の消滅から原点の余接空間の次元は $n$。全射表示から次元は $m$ 以下になり、実際の代数同型を通して根環へ移す。
+\end{proof}
+
+\begin{theorem}[標準加群の次数シフト]
+\label{thm:canonical}
+\lean{CanonicalRoots.Target.canonical_parameter}
+\leanok
+全対象は標準パラメーターの契約を満たす。商環作用を降下した実際の主 $\operatorname{Ext}^1$ 加群の次数成分は、全整数 $m$ に対して $R_{m+a}$ に対応する。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:numerics}
+主イデアルの自由分解と次数付き Hom から実 Ext 加群を同定し、その次数公式に $h=a+\sum w_i$ を代入する。標準次数の定義自体にはパラメーターを埋め込まない。
+\end{proof}
+
+\section{三変数枝}
+
+\begin{theorem}[三変数の完全な整数探索]
+\label{thm:ternary-enum}
+\lean{CanonicalRoots.enumerateTernaryCandidates_iff}
+\leanok
+$a\geq1$ のとき、有限候補列への所属は、五型のいずれか、指数が2以上、未約分重みが原始的、defect が $a$ という独立した整数述語と同値である。探索の指数上界は $a+6$。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:root}
+各型について共通の指数上界を証明し、有限箱および filter への所属を同定する。この整数命題だけでは実根環の完全性にはならない。
+\end{proof}
+
+\begin{theorem}[任意の三変数対象から五型への帰着]
+\label{thm:ternary-reduction}
+\lean{CanonicalRoots.Target.ternary_arithmetic_candidate}
+\leanok
+任意の三変数対象に対し、関係次数が一致し、重みが置換を除いて一致する整数候補が存在する。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:numerics}
+実装は実 Hilbert 極、signature 復元、支持解析、分岐型の排除、原始化を経由する。それらを対象に適用し、原始重みと次数差の恒等式から整数述語を満たす候補を得る。
+\end{proof}
+
+\begin{theorem}[三変数の実環実現と完全性]
+\label{thm:ternary-model}
+\lean{CanonicalRoots.ternary_candidate_realization,CanonicalRoots.Target.ternary_enumerated_model}
+\leanok
+全ての三変数整数候補は実際の canonical-root 対象を実現する。逆に任意の三変数対象は列挙された候補のモデルと次数付き同型である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:ternary-reduction,thm:ternary-enum}
+五型の単項式商写像を構成し、基底と簡約の議論により単射性・全射性を示す。任意対象からの候補抽出と、復元データによる根環の分類を接続する。Hilbert 級数の一致だけから一般の環同型を結論しない。
+\end{proof}
+
+\begin{theorem}[三変数キーと実モデルの同型]
+\label{thm:key}
+\lean{CanonicalRoots.candidateKey_eq_iff_gradedEquiv}
+\leanok
+同じ正パラメーターの二つの整数候補について、整列した重み・次数キーの一致と、表示された次数付き複素代数の同型は同値である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:ternary-model,thm:minimum}
+同じキーから重みの置換を得て、三変数根環の分類から実際の次数付き同型を構成する。逆に次数付き同型は最小生成元の重みを保ち、同じパラメーターから関係次数も一致する。
+\end{proof}
+
+\section{高次元枝}
+
+\begin{definition}[実商環上の指標作用]
+\label{def:action}
+\lean{CanonicalRoots.ambientCharacterAction,CanonicalRoots.ambientCharacterFixed}
+\leanok
+\uses{def:root}
+$L/\mathbb Z\tau$ の指標は周囲の商環 $T$ に対角的に作用する。各自己同型で固定される元が固定部分代数をなす。商へ降ろす前に関係式が保たれることを証明する。
+\end{definition}
+
+\begin{theorem}[固定環の同定]
+\label{thm:fixed}
+\lean{CanonicalRoots.rootSubalgebra_eq_characterFixed,CanonicalRoots.rootRingEquivCharacterFixed}
+\leanok
+正パラメーターの許容 canonical root について、実際の根部分代数は指標固定部分代数に等しい：$R=T^G$。従って両者の複素代数同型を得る。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:action,thm:root-arithmetic}
+根の各成分は固定される。逆に固定元を斉次成分に分解し、指標分離から非零成分の次数が整数根直線に属すると示す。正値性により負の成分は消滅する。
+\end{proof}
+
+\begin{theorem}[高次元での互いに素性]
+\label{thm:coprime}
+\lean{CanonicalRoots.Target.pairwise_coprime}
+\leanok
+4変数以上の任意の対象について、signature の各成分は対ごとに互いに素である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:target,thm:fixed}
+共通因子があると非零層に安定化群の商が生じる。形式的不変環の局所表示と余接次元の下限が、孤立表示の頂点外での正則性に矛盾する。局所表示には全群でなく点の安定化群を使う。
+\end{proof}
+
+\begin{theorem}[高次元の必要十分条件]
+\label{thm:higher-criterion}
+\lean{CanonicalRoots.higher_root_hypersurface_iff,CanonicalRoots.RootHypersurfacePresentation.higher_root_eq_top}
+\leanok
+4変数以上、正パラメーターの許容実根について、孤立超曲面表示の存在は、signature の対ごとの互いに素性と $P-\sum_iP/p_i=a$（$P=\prod_ip_i$）に同値である。この場合、根部分代数は $T$ 全体となる。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:coprime,thm:minimum}
+互いに素性の後、純冪生成と支持の数え上げで根の scale が1になる。根の等式に積次数を適用して defect を得る。逆に Fermat 表示で整数データを実現する。
+\end{proof}
+
+\begin{theorem}[完全な整数再帰]
+\label{thm:higher-enum}
+\lean{CanonicalRoots.enumerateHigherCandidates_iff}
+\leanok
+$a>0$ の高次元候補列は、長さ $n$、各成分2以上、狭義昇順、対ごとに互いに素、defect が $a$ のリスト全体に正確に一致する。再帰では残りの成分数が減少する。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:root}
+接頭部の積 $P$ と整数 defect $A$ を保つ。残り $r$ 個で次の成分の上界は $\lfloor(r+a)P/A\rfloor$、更新は $(Pq,Aq-P)$。最後の成分は $Aq=a+P$ で定まる。帰納法により正しい接頭部が全て探索に残ると示す。
+\end{proof}
+
+\begin{theorem}[高次元の意味論的分類]
+\label{thm:higher-model}
+\lean{CanonicalRoots.higher_candidates_sound,CanonicalRoots.Target.higher_candidates_complete_unique,CanonicalRoots.higher_candidates_pairwise_nonisomorphic}
+\leanok
+高次元候補モデルは実際の対象である。高次元の任意対象はちょうど一つの出力候補と同型であり、異なる候補位置は次数付き同型でない。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:higher-criterion,thm:higher-enum}
+独立した超曲面の必要十分条件、完全な整数再帰、signature の添字置換、および Fermat モデルの内在的な次数付き不変量を接続する。
+\end{proof}
+
+\section{分類器と最終四定理}
+
+\begin{definition}[公開する全域分類関数]
+\label{def:enumerate}
+\lean{CanonicalRoots.Input,CanonicalRoots.enumerate}
+\leanok
+\uses{thm:ternary-enum,thm:higher-enum}
+入力は $n,a$ と $3\leq n$、$1\leq a$ の証明だけを持つ。全域関数は $n$ に応じて三変数枝・高次元枝を選び、正確な方程式データの有限リストを返す。
+\end{definition}
+
+\begin{theorem}[実際の出力方程式への移送]
+\label{thm:output}
+\lean{CanonicalRoots.Target.output_complete_unique,CanonicalRoots.output_pairwise_nonisomorphic}
+\leanok
+全対象は、次数付き代数同型を除いて方程式データ列のちょうど一つの位置に現れる。異なる位置は非同型である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:key,thm:higher-model,def:enumerate}
+次元で場合分けして両枝の意味論的分類を使う。出力重みの整列と同期する変数の置換を通して候補モデルを移送する。
+\end{proof}
+
+\begin{theorem}[各行の正確な根の証人]
+\label{thm:witness}
+\lean{CanonicalRoots.output_root_witness}
+\leanok
+全ての出力行について、多項式、重み、関係次数、順序付き signature、canonical root が表示データと一致する実際の対象が存在する。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:output,thm:root-arithmetic}
+出力の実現に元の signature を付加し、根の正規形の証人を移送する。重みと指数列の置換も証明に含める。
+\end{proof}
+
+\begin{definition}[公開する健全性の契約]
+\label{def:contract}
+\lean{CanonicalRoots.EquationRealizes}
+\leanok
+\uses{def:target,thm:canonical,thm:minimum}
+方程式実現は、次元とパラメーター、整列した正の原始重み、非負指数、式と根証人の一致する実際の対象、標準 Ext シフト、正確な最小代数生成元数を含む。この述語はリストへの所属と独立に定義する。
+\end{definition}
+
+\begin{theorem}[最終定理：健全性]
+\label{thm:sound}
+\lean{CanonicalRoots.enumerate_sound}
+\leanok
+全ての合法入力と、その出力に含まれる全ての方程式について、方程式実現の契約が成り立つ。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:witness,def:contract}
+リストへの所属を位置に変換し、正確な根の証人を得て、出力の整形式性、標準パラメーター、最小生成元数の結果を合わせる。
+\end{proof}
+
+\begin{theorem}[最終定理：一意完全性]
+\label{thm:complete}
+\lean{CanonicalRoots.enumerate_complete}
+\leanok
+全ての合法入力と、その入力に対する独立に定義された任意の対象について、表示環が実根環と次数付き同型になる出力位置がただ一つ存在する。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:target,thm:output}
+実際の方程式データ列についての意味論的完全性と一意性の定理を適用する。
+\end{proof}
+
+\begin{theorem}[最終定理：相互非同型]
+\label{thm:noniso}
+\lean{CanonicalRoots.enumerate_pairwise_nonisomorphic}
+\leanok
+出力リストの異なる二位置が定める環は、次数付き複素代数として同型でない。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:output}
+実際の出力環の非同型定理を用いる。計算キーが異なるという結論だけではない。
+\end{proof}
+
+\begin{theorem}[最終定理：純粋 payload の正しさ]
+\label{thm:payload}
+\lean{CanonicalRoots.cli_payload_correct}
+\leanok
+純粋な正常分類 payload の復号結果は、正確に $\operatorname{some}(n,a,\operatorname{enumerate}(\mathrm{input}))$ である。対象は純粋 JSON 値と decoder であり、OS 出力チャネルの実行ではない。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:enumerate}
+全方程式リストに、分類 payload の汎用 encode/decode 往復定理を適用する。
+\end{proof}
+
+\begin{theorem}[出力リスト全体の検査]
+\label{thm:checker}
+\lean{CanonicalRoots.checkEquationList_correct}
+\leanok
+方程式リスト検査器が true を返すための必要十分条件は、順序と重複度を含めて与えられたリストが分類器の結果に等しいことである。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:enumerate,thm:payload}
+Bool の等値検査を展開し、方程式データの全リストに対する決定可能な等号を使う。具体的な全リスト証明書は別の OutputCertificates モジュールにある。
+\end{proof}
+
+\section*{検証と出典}
+リポジトリの検証スクリプトを実行し、docs/VERIFICATION.md に従って最終定理の署名を読む。保存された研究原稿と過去の自己監査は英語版リポジトリにある。それらは証明候補・来歴資料であり、公理ではない。ビルドには Patrick Massot の \href{https://github.com/PatrickMassot/leanblueprint}{Lean Blueprint}、plasTeX、Graphviz を使う。

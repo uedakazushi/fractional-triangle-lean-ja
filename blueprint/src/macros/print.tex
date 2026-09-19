@@ -1,0 +1,5 @@
+\ExplSyntaxOn
+\NewDocumentCommand{\lean}{m}{\par\begingroup\scriptsize\raggedright\clist_map_inline:nn{#1}{\nolinkurl{##1}\par}\endgroup}
+\ExplSyntaxOff
+\newcommand{\leanok}{}
+\newcommand{\uses}[1]{}

@@ -1,0 +1,329 @@
+[
+  {
+    "label": "def:root",
+    "kind": "definition",
+    "module": "Semantics",
+    "declarations": [
+      "CanonicalRoots.DegreeGroup",
+      "CanonicalRoots.IsCanonicalRoot",
+      "CanonicalRoots.AmbientRing",
+      "CanonicalRoots.RootRing",
+      "CanonicalRoots.rootPiece",
+      "CanonicalRoots.GradedAlgEquiv"
+    ],
+    "uses": []
+  },
+  {
+    "label": "def:target",
+    "kind": "definition",
+    "module": "Target",
+    "declarations": [
+      "CanonicalRoots.RootHypersurfacePresentation",
+      "CanonicalRoots.Target"
+    ],
+    "uses": [
+      "def:root"
+    ]
+  },
+  {
+    "label": "thm:root-arithmetic",
+    "kind": "theorem",
+    "module": "RootArithmetic",
+    "declarations": [
+      "CanonicalRoots.canonicalRoot_exists_iff"
+    ],
+    "uses": [
+      "def:root"
+    ]
+  },
+  {
+    "label": "def:basis",
+    "kind": "definition",
+    "module": "RootFiniteFree",
+    "declarations": [
+      "CanonicalRoots.rootFiniteFreeBasis"
+    ],
+    "uses": [
+      "thm:root-arithmetic"
+    ]
+  },
+  {
+    "label": "thm:hilbert",
+    "kind": "theorem",
+    "module": "RootHilbertRational",
+    "declarations": [
+      "CanonicalRoots.canonicalRootHilbertSeries_eq_rational"
+    ],
+    "uses": [
+      "def:basis"
+    ]
+  },
+  {
+    "label": "thm:numerics",
+    "kind": "theorem",
+    "module": "HypersurfaceNumerics",
+    "declarations": [
+      "CanonicalRoots.Target.relationDegree_eq_add_sum_weights",
+      "CanonicalRoots.Target.weights_gcd_eq_one"
+    ],
+    "uses": [
+      "def:target",
+      "thm:hilbert"
+    ]
+  },
+  {
+    "label": "thm:minimum",
+    "kind": "theorem",
+    "module": "MinimalGenerators",
+    "declarations": [
+      "CanonicalRoots.RootHypersurfacePresentation.root_minimum_generators",
+      "CanonicalRoots.RootHypersurfacePresentation.exists_minimal_surjection"
+    ],
+    "uses": [
+      "def:target"
+    ]
+  },
+  {
+    "label": "thm:canonical",
+    "kind": "theorem",
+    "module": "CanonicalParameter",
+    "declarations": [
+      "CanonicalRoots.Target.canonical_parameter"
+    ],
+    "uses": [
+      "thm:numerics"
+    ]
+  },
+  {
+    "label": "thm:ternary-enum",
+    "kind": "theorem",
+    "module": "Candidates",
+    "declarations": [
+      "CanonicalRoots.enumerateTernaryCandidates_iff"
+    ],
+    "uses": [
+      "def:root"
+    ]
+  },
+  {
+    "label": "thm:ternary-reduction",
+    "kind": "theorem",
+    "module": "TargetTernaryCandidate",
+    "declarations": [
+      "CanonicalRoots.Target.ternary_arithmetic_candidate"
+    ],
+    "uses": [
+      "thm:numerics"
+    ]
+  },
+  {
+    "label": "thm:ternary-model",
+    "kind": "theorem",
+    "module": "TernaryRealization",
+    "declarations": [
+      "CanonicalRoots.ternary_candidate_realization",
+      "CanonicalRoots.Target.ternary_enumerated_model"
+    ],
+    "uses": [
+      "thm:ternary-reduction",
+      "thm:ternary-enum"
+    ]
+  },
+  {
+    "label": "thm:key",
+    "kind": "theorem",
+    "module": "CandidateKeySemantics",
+    "declarations": [
+      "CanonicalRoots.candidateKey_eq_iff_gradedEquiv"
+    ],
+    "uses": [
+      "thm:ternary-model",
+      "thm:minimum"
+    ]
+  },
+  {
+    "label": "def:action",
+    "kind": "definition",
+    "module": "AmbientCharacterAction",
+    "declarations": [
+      "CanonicalRoots.ambientCharacterAction",
+      "CanonicalRoots.ambientCharacterFixed"
+    ],
+    "uses": [
+      "def:root"
+    ]
+  },
+  {
+    "label": "thm:fixed",
+    "kind": "theorem",
+    "module": "RootInvariants",
+    "declarations": [
+      "CanonicalRoots.rootSubalgebra_eq_characterFixed",
+      "CanonicalRoots.rootRingEquivCharacterFixed"
+    ],
+    "uses": [
+      "def:action",
+      "thm:root-arithmetic"
+    ]
+  },
+  {
+    "label": "thm:coprime",
+    "kind": "theorem",
+    "module": "HigherCoprimality",
+    "declarations": [
+      "CanonicalRoots.Target.pairwise_coprime"
+    ],
+    "uses": [
+      "def:target",
+      "thm:fixed"
+    ]
+  },
+  {
+    "label": "thm:higher-criterion",
+    "kind": "theorem",
+    "module": "HigherConverse",
+    "declarations": [
+      "CanonicalRoots.higher_root_hypersurface_iff",
+      "CanonicalRoots.RootHypersurfacePresentation.higher_root_eq_top"
+    ],
+    "uses": [
+      "thm:coprime",
+      "thm:minimum"
+    ]
+  },
+  {
+    "label": "thm:higher-enum",
+    "kind": "theorem",
+    "module": "HigherArithmetic",
+    "declarations": [
+      "CanonicalRoots.enumerateHigherCandidates_iff"
+    ],
+    "uses": [
+      "def:root"
+    ]
+  },
+  {
+    "label": "thm:higher-model",
+    "kind": "theorem",
+    "module": "HigherClassification",
+    "declarations": [
+      "CanonicalRoots.higher_candidates_sound",
+      "CanonicalRoots.Target.higher_candidates_complete_unique",
+      "CanonicalRoots.higher_candidates_pairwise_nonisomorphic"
+    ],
+    "uses": [
+      "thm:higher-criterion",
+      "thm:higher-enum"
+    ]
+  },
+  {
+    "label": "def:enumerate",
+    "kind": "definition",
+    "module": "Classifier",
+    "declarations": [
+      "CanonicalRoots.Input",
+      "CanonicalRoots.enumerate"
+    ],
+    "uses": [
+      "thm:ternary-enum",
+      "thm:higher-enum"
+    ]
+  },
+  {
+    "label": "thm:output",
+    "kind": "theorem",
+    "module": "OutputClassification",
+    "declarations": [
+      "CanonicalRoots.Target.output_complete_unique",
+      "CanonicalRoots.output_pairwise_nonisomorphic"
+    ],
+    "uses": [
+      "thm:key",
+      "thm:higher-model",
+      "def:enumerate"
+    ]
+  },
+  {
+    "label": "thm:witness",
+    "kind": "theorem",
+    "module": "OutputRootWitness",
+    "declarations": [
+      "CanonicalRoots.output_root_witness"
+    ],
+    "uses": [
+      "thm:output",
+      "thm:root-arithmetic"
+    ]
+  },
+  {
+    "label": "def:contract",
+    "kind": "definition",
+    "module": "ClassificationContract",
+    "declarations": [
+      "CanonicalRoots.EquationRealizes"
+    ],
+    "uses": [
+      "def:target",
+      "thm:canonical",
+      "thm:minimum"
+    ]
+  },
+  {
+    "label": "thm:sound",
+    "kind": "theorem",
+    "module": "Final",
+    "declarations": [
+      "CanonicalRoots.enumerate_sound"
+    ],
+    "uses": [
+      "thm:witness",
+      "def:contract"
+    ]
+  },
+  {
+    "label": "thm:complete",
+    "kind": "theorem",
+    "module": "Final",
+    "declarations": [
+      "CanonicalRoots.enumerate_complete"
+    ],
+    "uses": [
+      "def:target",
+      "thm:output"
+    ]
+  },
+  {
+    "label": "thm:noniso",
+    "kind": "theorem",
+    "module": "Final",
+    "declarations": [
+      "CanonicalRoots.enumerate_pairwise_nonisomorphic"
+    ],
+    "uses": [
+      "thm:output"
+    ]
+  },
+  {
+    "label": "thm:payload",
+    "kind": "theorem",
+    "module": "Final",
+    "declarations": [
+      "CanonicalRoots.cli_payload_correct"
+    ],
+    "uses": [
+      "def:enumerate"
+    ]
+  },
+  {
+    "label": "thm:checker",
+    "kind": "theorem",
+    "module": "OutputCertificateChecker",
+    "declarations": [
+      "CanonicalRoots.checkEquationList_correct"
+    ],
+    "uses": [
+      "def:enumerate",
+      "thm:payload"
+    ]
+  }
+]

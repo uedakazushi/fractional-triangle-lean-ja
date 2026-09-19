@@ -1,0 +1,2 @@
+/* Keep proof/source controls discoverable on touch and keyboard layouts. */
+.thm_header_hidden_extras { display: inline-block !important; visibility: visible !important; opacity: 1 !important; }
