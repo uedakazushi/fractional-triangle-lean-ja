@@ -23,7 +23,7 @@
 OS 出力、コンパイラー、JSON 文字列の parser/printer、外部ハッシュは
 純粋定理の外側です。実機での実用的な時間・メモリの保証も全域性とは別です。
 
-## 原稿の定理1.4
+## 可逆性と剛性の定理（原稿の定理1.4）
 
 `canonical_root_isolated_ja_v01.pdf` の4ページの定理1.4は、
 英語正本の `formal/CanonicalRoots/TheoremOneFour.lean` にある
