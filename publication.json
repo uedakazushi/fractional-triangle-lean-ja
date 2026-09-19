@@ -2,8 +2,8 @@
   "language": "ja",
   "role": "explanation",
   "repository_name": "fractional-triangle-lean-ja",
-  "repository_url": null,
-  "companion_url": null,
+  "repository_url": "https://github.com/uedakazushi/fractional-triangle-lean-ja",
+  "companion_url": "https://github.com/uedakazushi/fractional-triangle-lean",
   "authors": "Kenji Hashimoto (橋本健治), Hwayoung Lee, Kazushi Ueda (植田一石)",
   "code_license": "Apache-2.0",
   "documentation_license": "CC-BY-4.0"

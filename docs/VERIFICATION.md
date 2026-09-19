@@ -2,7 +2,8 @@
 
 1. 英語正本を `upstream.lock.json` のコミットに合わせ、`bash scripts/verify.sh` を実行します。
    独立した全 clean 再ビルドには、専用の依存を持つ checkout で `bash scripts/acceptance.sh` を使います。
-2. `formal/CanonicalRoots/Final.lean` の四定理を読みます。
+2. `formal/CanonicalRoots/Final.lean` の四定理と、
+   `formal/CanonicalRoots/TheoremOneFour.lean` の `theorem_1_4` を読みます。
    `formal/` で `lake env lean FinalSignature.lean` を実行し、全引数を確認します。
 3. `Target.lean` と `Semantics.lean` を開き、実複素商環、捩れを保持した次数群、
    根の等式、全複素点での孤立性、次数保存付き AlgEquiv を確認します。
@@ -12,6 +13,9 @@
 5. `lake env lean Audit.lean` の結果を監査します。許容公理は
    `propext`、`Classical.choice`、`Quot.sound` のみです。
    公理監査が通っても、定義や仮定が意図したものかは別に読む必要があります。
+   定理1.4については `InvertiblePolynomial`、`IsPrincipal`、
+   `HigherRootRigidity` を展開し、六つの連言を原稿4ページと照合します。
+   三変数の逆方向には atomic 型への所属や根環としての実現を仮定していません。
 6. `OutputCertificates.lean` の証明書は行ごとの検査でなく全リスト等式です。
    Python の一致試験や SHA256 は外部検査であり、Lean の証明ではありません。
 7. Blueprint の本文と Lean 宣言を照合します。緑色や宣言の実在検査だけでは

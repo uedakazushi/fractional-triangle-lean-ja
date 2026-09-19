@@ -41,7 +41,7 @@ def main():
     (finder/'index.html').write_text(page('Lean declaration source index',body))
     ja=not (ROOT/'formal').exists()
     language='ja' if ja else 'en'
-    title='孤立 canonical-root 超曲面 — 日本語解説' if ja else 'Canonical-root hypersurfaces — Lean formalization'
+    title='Isolated hypersurface fractional triangle singularities' + (' — 日本語解説' if ja else '')
     body='<h1>'+title+'</h1><p>Kenji Hashimoto · Hwayoung Lee · Kazushi Ueda</p>'
     body+='<p>'+('英語版の固定コミットに対応する日本語解説。' if ja else 'The canonical source edition and its curated mathematical blueprint.')+'</p>'
     body+='<ul><li><a href="blueprint/index.html">Lean Blueprint</a></li><li><a href="blueprint/dep_graph_document.html">Dependency graph / 依存グラフ</a></li><li><a href="lean/find/index.html">Lean source declarations / 宣言一覧</a></li>'

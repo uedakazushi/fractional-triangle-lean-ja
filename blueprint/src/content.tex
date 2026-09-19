@@ -317,5 +317,91 @@ $a>0$ の高次元候補列は、長さ $n$、各成分2以上、狭義昇順、
 Bool の等値検査を展開し、方程式データの全リストに対する決定可能な等号を使う。具体的な全リスト証明書は別の OutputCertificates モジュールにある。
 \end{proof}
 
+\section{原稿の定理1.4}
+
+\begin{definition}[可逆多項式と主表示]
+\label{def:invertible}
+\lean{CanonicalRoots.InvertiblePolynomial, CanonicalRoots.InvertiblePolynomial.IsPrincipal, CanonicalRoots.InvertiblePolynomial.degree_equations}
+\leanok
+可逆多項式は、非零係数 $c_i$ と正則な指数行列 $E\in M_n(\mathbb N)$ を持つ実際の多項式 $f=\sum_{i=1}^n c_i z^{E_i}$ であり、正の重み、定数項・一次項の不在、原点での孤立臨界点を要求する。主表示はさらに重みの原始性と $|\det E|=h$ を満たす。斉次性から $Ew=h\mathbf1$ が従う。行列の正則性により各行は異なり、表示された単項式の係数は相殺されない。
+\end{definition}
+\begin{proof}
+\leanok
+\uses{def:target}
+定義は多項式と行列の直接的な条件だけからなる。根環としての実現、atomic 型への分類、候補リストへの所属を仮定に含めない。
+\end{proof}
+
+\begin{theorem}[任意の非零係数の正規化]
+\label{thm:diagonal}
+\lean{CanonicalRoots.exponent_torus_surjective, CanonicalRoots.presentedGradedDiagonal}
+\leanok
+正則な非負整数指数行列 $E$ による単項式写像 $(\mathbb C^\times)^n\to(\mathbb C^\times)^n$ は全射である。対角変数変換は、実際の主イデアル商環の次数付き同型を誘導する。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:invertible}
+複素数上で $Ev=\log c$ を解いて各成分の指数関数を取る。多項式への代入とその逆は、重み付き斉次成分を全て保存し、商環上で互いに逆の次数付き代数同型になる。
+\end{proof}
+
+\begin{theorem}[三変数可逆多項式の五つの支持型]
+\label{thm:invertible-support}
+\lean{CanonicalRoots.InvertiblePolynomial.ternary_support, CanonicalRoots.InvertiblePolynomial.ternary_cox_matrix}
+\leanok
+正の defect を持つ任意の三変数可逆多項式の支持は、項と変数の置換により五つの atomic 型のいずれかになる。その指数行列は、同じ置換で対応する Cox 行列になる。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{def:invertible}
+孤立性から主指数が二以上の軸単項式を三つ得る。これらは互いに異なり、項が三つしかないため支持を尽くす。分岐型ではさらに非零の link 単項式が必要となり矛盾する。行と列の置換は行列式の絶対値を保つ。
+\end{proof}
+
+\begin{theorem}[全ての根環の主可逆表示]
+\label{thm:principal-presentation}
+\lean{CanonicalRoots.canonical_root_invertible_presentation, CanonicalRoots.Target.higher_root_index_maximal}
+\leanok
+任意の孤立超曲面根環は、原始重み、$|\det E|=h$、$h-\sum_iw_i=\delta$ を満たす可逆多項式による実際の次数付き表示を持つ。四変数以上では、他の正の根指数は全て $\delta$ を割り切り、したがって $\delta$ 以下である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:ternary-model,thm:higher-criterion,def:invertible}
+三変数では実現済みの Cox 候補、四変数以上では Fermat 表示を用いる。重みの原始性と defect の等式は根環の Hilbert 級数から従う。高次元では signature index が $\delta$ に等しく、根の算術から整除性と最大性が従う。
+\end{proof}
+
+\begin{theorem}[与えられた三変数可逆多項式の実現]
+\label{thm:invertible-converse}
+\lean{CanonicalRoots.principal_ternary_invertible_realization}
+\leanok
+原始重み、$|\det E|=h$、$h-\sum_iw_i=\delta>0$ を満たす全ての三変数可逆多項式は、その多項式そのもの、重み、関係式次数を持つ根環の表示として実現される。非零係数は任意である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:diagonal,thm:invertible-support,thm:ternary-model}
+五つの支持型への帰着により、項と変数の置換を得る。行列式の等式から Cox 重みと与えられた原始重みが一致する。対角変換で係数を正規化し、Cox 多項式の実現を得た後、次数付き同型を元の多項式へ移す。
+\end{proof}
+
+\begin{theorem}[signature の一意性と高次元の剛性]
+\label{thm:manuscript-rigidity}
+\lean{CanonicalRoots.higher_canonical_root_rigidity, CanonicalRoots.ternary_signature_unique}
+\leanok
+同じ正の根指数を持つ次数付き同型な三変数根環は、同じ signature 多重集合を持つ。四変数以上の孤立超曲面根環では $R=T$ となり、$h=\prod_i p_i$、$w_i=h/p_i$ の原始 Fermat 表示が得られる。またその正の根指数は最大である。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:higher-criterion,thm:principal-presentation,thm:ternary-model}
+三変数の signature は Hilbert 関数から回復する。高次元の互いに素性と積の defect の判定から、実部分環の全体環との一致と Fermat 表示を導く。
+\end{proof}
+
+\begin{theorem}[原稿の定理1.4]
+\label{thm:one-four}
+\lean{CanonicalRoots.theorem_1_4}
+\leanok
+\texttt{theorem\_1\_4} の六つの連言は、\texttt{canonical\_root\_isolated\_ja\_v01.pdf} の4ページにある定理1.4を形式化する。全次元での主可逆表示、任意の三変数可逆多項式に対する逆方向、置換を除く三変数 signature の一意性、根の一意性、高次元の算術的判定、および剛性の結論を含む。Lean の変数 \texttt{a} は原稿の $\delta$ を表す。
+\end{theorem}
+\begin{proof}
+\leanok
+\uses{thm:principal-presentation,thm:invertible-converse,thm:manuscript-rigidity,thm:root-arithmetic}
+前述の表示・逆方向・剛性の結果と根の一意性を合わせる。高次元での存在条件は、指数の対ごとの互いに素性と $\prod_i p_i-\sum_i\prod_{j\ne i}p_j=\delta$ である。同じ環の任意の方程式に主行列式条件を課す定式化にはしていない。
+\end{proof}
+
 \section*{検証と出典}
 リポジトリの検証スクリプトを実行し、docs/VERIFICATION.md に従って最終定理の署名を読む。保存された研究原稿と過去の自己監査は英語版リポジトリにある。それらは証明候補・来歴資料であり、公理ではない。ビルドには Patrick Massot の \href{https://github.com/PatrickMassot/leanblueprint}{Lean Blueprint}、plasTeX、Graphviz を使う。

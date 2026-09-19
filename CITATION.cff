@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite the exact canonical-source commit used in your work."
 type: software
-title: "Canonical-root hypersurfaces: Japanese explanatory companion"
+title: "Isolated hypersurface fractional triangle singularities: Japanese explanatory companion"
 authors:
   - family-names: Hashimoto
     given-names: Kenji
@@ -16,3 +16,4 @@ keywords:
   - Lean
   - formal verification
   - canonical-root hypersurfaces
+repository-code: "https://github.com/uedakazushi/fractional-triangle-lean-ja"

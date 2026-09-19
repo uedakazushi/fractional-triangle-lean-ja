@@ -325,5 +325,97 @@
       "def:enumerate",
       "thm:payload"
     ]
+  },
+  {
+    "label": "def:invertible",
+    "kind": "definition",
+    "module": "InvertiblePolynomial",
+    "declarations": [
+      "CanonicalRoots.InvertiblePolynomial",
+      "CanonicalRoots.InvertiblePolynomial.IsPrincipal",
+      "CanonicalRoots.InvertiblePolynomial.degree_equations"
+    ],
+    "uses": [
+      "def:target"
+    ]
+  },
+  {
+    "label": "thm:diagonal",
+    "kind": "theorem",
+    "module": "DiagonalPolynomialEquiv",
+    "declarations": [
+      "CanonicalRoots.exponent_torus_surjective",
+      "CanonicalRoots.presentedGradedDiagonal"
+    ],
+    "uses": [
+      "def:invertible"
+    ]
+  },
+  {
+    "label": "thm:invertible-support",
+    "kind": "theorem",
+    "module": "TernaryInvertibleSupport",
+    "declarations": [
+      "CanonicalRoots.InvertiblePolynomial.ternary_support",
+      "CanonicalRoots.InvertiblePolynomial.ternary_cox_matrix"
+    ],
+    "uses": [
+      "def:invertible"
+    ]
+  },
+  {
+    "label": "thm:principal-presentation",
+    "kind": "theorem",
+    "module": "PrincipalRootPresentation",
+    "declarations": [
+      "CanonicalRoots.canonical_root_invertible_presentation",
+      "CanonicalRoots.Target.higher_root_index_maximal"
+    ],
+    "uses": [
+      "thm:ternary-model",
+      "thm:higher-criterion",
+      "def:invertible"
+    ]
+  },
+  {
+    "label": "thm:invertible-converse",
+    "kind": "theorem",
+    "module": "TernaryInvertibleRealization",
+    "declarations": [
+      "CanonicalRoots.principal_ternary_invertible_realization"
+    ],
+    "uses": [
+      "thm:diagonal",
+      "thm:invertible-support",
+      "thm:ternary-model"
+    ]
+  },
+  {
+    "label": "thm:manuscript-rigidity",
+    "kind": "theorem",
+    "module": "TheoremOneFour",
+    "declarations": [
+      "CanonicalRoots.higher_canonical_root_rigidity",
+      "CanonicalRoots.ternary_signature_unique"
+    ],
+    "uses": [
+      "thm:higher-criterion",
+      "thm:principal-presentation",
+      "thm:ternary-model"
+    ]
+  },
+  {
+    "label": "thm:one-four",
+    "kind": "theorem",
+    "module": "TheoremOneFour",
+    "declarations": [
+      "CanonicalRoots.theorem_1_4"
+    ],
+    "uses": [
+      "thm:principal-presentation",
+      "thm:invertible-converse",
+      "thm:manuscript-rigidity",
+      "thm:root-arithmetic"
+    ]
   }
 ]
